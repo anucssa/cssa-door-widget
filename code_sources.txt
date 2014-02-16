@@ -1,0 +1,30 @@
+Code sources:
+
+UNLESS OTHERWISE STATED, EVERYTHING IS (C) 2014 TERESA BRADBURY
+
+DoorWidgetProvider.isOnline() is based on
+http://stackoverflow.com/questions/1560788/how-to-check-internet-access-on-android-inetaddress-never-timeouts
+
+Code to add button event handler is based on
+http://stackoverflow.com/questions/14798073/button-click-event-for-android-widget
+
+Code to read a web page is based on
+http://www.coderzheaven.com/2011/07/17/how-to-read-webpage-contents-as-a-string-in-android/
+
+Code to write a service based on
+http://www.vogella.com/tutorials/AndroidWidgets/article.html
+
+Various code snippets from
+https://developer.android.com/
+
+Door Open image is from
+http://www.gettyicons.com/free-icon/112/must-have-icon-set/free-log-out-icon-png/
+
+Door Closed image is from
+http://www.veryicon.com/icons/system/fresh-addon/door-2.html
+
+
+-------------------------------------------------
+
+Stackoverflow code is licensed under
+http://creativecommons.org/licenses/by-sa/2.5/

@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">CSSA Door Widget</string>
+    <string name="door_button_description">A picture of a door</string>
+    <string name="door_button_open_description">A picture of an open door</string>
+    <string name="door_button_closed_description">A picture of a closed door</string>
+    <string name="toast_door_open">CSSA room is open!</string>
+    <string name="toast_door_closed">CSSA room is shut.</string>
+    <string name="toast_no_internet">Need more Interwebz</string>
+    <string name="toast_update_failed">Can\'t update door for reasons unknown.</string>
+    <string name="widget_label">CSSA Door</string>
+    
+</resources>
