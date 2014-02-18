@@ -14,7 +14,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.graphics.drawable.TransitionDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -76,7 +75,7 @@ public class NetworkTask extends AsyncTask<Context, Void, Void> {
 	@Override
 	public void onPostExecute(Void v) {
 		RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.door_widget);
-		//TransitionDrawable td = (TransitionDrawable) context.getResources().getDrawable(R.id.door_transition);
+		//TransitionDrawable td = (TransitionDrawable) context.getResources().getDrawable(R.drawable.door_transition);
 		switch (result) {
 		case OPEN:
 			//td.startTransition(TRANSITION_LENGTH_MILLIS);
