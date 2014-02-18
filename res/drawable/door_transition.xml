@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transition xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/door_transition" >
+    <item android:drawable="@drawable/door_closed"/>
+    <item android:drawable="@drawable/door_open"/>
+</transition>

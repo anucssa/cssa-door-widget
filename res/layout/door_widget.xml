@@ -13,15 +13,17 @@
         android:contentDescription="@string/door_button_description"
         android:src="@drawable/door_open_selector"
         android:background="@null"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         />
     
-    <TextView 
+<!--     <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/widget_label"
         android:textColor="#000"
         android:gravity="center"
         android:textSize="12sp"
-        />
+        /> -->
 
 </LinearLayout>
