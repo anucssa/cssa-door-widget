@@ -1,5 +1,7 @@
 * Need to handle multiple instances of the widget
 
-* Update only when screen is on
+* Update only when screen is on requires testing
 
 * Configuration file for Android 3.0+
+
+* Handle resizing

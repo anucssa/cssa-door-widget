@@ -26,7 +26,7 @@ public class ScreenReceiver extends BroadcastReceiver {
 		AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		
 		if (value) alarm.setRepeating(AlarmManager.RTC, 0, 
-				DoorWidgetProvider.UPDATE_INTERVAL_MILLIS, pending);
+				context.getResources().getInteger(R.integer.alarm_update_interval_millis), pending);
 		else alarm.cancel(pending);
 		
 		logv(this, "Alarm: " + (value ? "on" : "off"));

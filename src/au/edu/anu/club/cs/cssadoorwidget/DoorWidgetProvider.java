@@ -13,7 +13,6 @@ import android.widget.RemoteViews;
 public class DoorWidgetProvider extends AppWidgetProvider {
 	
 	private static final String DOOR_BUTTON = "DOOR_BUTTON";
-	protected static final long UPDATE_INTERVAL_MILLIS = 30 * 1000;
 	protected static final String UPDATE_ACTION = "UPDATE_ALARM";
 	
 	public DoorWidgetProvider() {
@@ -63,7 +62,8 @@ public class DoorWidgetProvider extends AppWidgetProvider {
 
 	private void setAlarm(Context context, boolean value) {
 		AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-		if (value) alarm.setRepeating(AlarmManager.RTC, 0, UPDATE_INTERVAL_MILLIS, 
+		if (value) alarm.setRepeating(AlarmManager.RTC, 0, 
+				context.getResources().getInteger(R.integer.alarm_update_interval_millis), 
 				getPendingSelfIntent(context, UPDATE_ACTION));
 		else alarm.cancel(getPendingSelfIntent(context, UPDATE_ACTION));
 		logv(this, "Alarm: " + (value ? "on" : "off"));
