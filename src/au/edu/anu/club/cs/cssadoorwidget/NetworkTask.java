@@ -20,20 +20,29 @@ import android.os.AsyncTask;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-public class NetworkTask extends AsyncTask<Context, Void, Void> { 
+public class NetworkTask extends AsyncTask<NetworkTask.NetworkTaskParams, Void, Void> { 
+	
+	public static class NetworkTaskParams {
+		public Context context;
+		public boolean makeToast;
+		public NetworkTaskParams(Context context, boolean makeToast) {
+			this.context = context;
+			this.makeToast = makeToast;
+		}
+	}
 
 	private enum Result {OPEN, CLOSED, NO_INTERNET, OTHER_ERROR}
 	private Result result = null;
-	private Context context;
+	private NetworkTaskParams p;
 
 	private static final String DOOR_URI = "http://cs.club.anu.edu.au/files/doorstate.txt";
 	private static final String OPEN_STRING = "open";
 	private static final int TRANSITION_LENGTH_MILLIS = 500;
 
 	@Override
-	protected Void doInBackground(Context... argv) {
-		context = argv[0];
-		if (isOnline(context)) {
+	protected Void doInBackground(NetworkTaskParams... argv) {
+		p = argv[0];
+		if (isOnline(p.context)) {
 			try {
 				if (isDoorOpen()) {
 					result = Result.OPEN;
@@ -74,7 +83,7 @@ public class NetworkTask extends AsyncTask<Context, Void, Void> {
 
 	@Override
 	public void onPostExecute(Void v) {
-		RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.door_widget);
+		RemoteViews rv = new RemoteViews(p.context.getPackageName(), R.layout.door_widget);
 		//TransitionDrawable td = (TransitionDrawable) context.getResources().getDrawable(R.drawable.door_transition);
 		switch (result) {
 		case OPEN:
@@ -94,14 +103,14 @@ public class NetworkTask extends AsyncTask<Context, Void, Void> {
 			report(R.string.toast_update_failed);
 			break;
 		}
-		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-		ComponentName watchWidget = new ComponentName(context, DoorWidgetProvider.class);
+		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(p.context);
+		ComponentName watchWidget = new ComponentName(p.context, DoorWidgetProvider.class);
 		appWidgetManager.updateAppWidget(watchWidget, rv);
 	}
 
 	private void report(int strId) {
-		Toast.makeText(context, strId, Toast.LENGTH_SHORT).show();
-		logv(this, context.getResources().getString(strId));
+		logv(this, p.context.getResources().getString(strId));
+		if (p.makeToast) Toast.makeText(p.context, strId, Toast.LENGTH_SHORT).show();
 	}
 }
 

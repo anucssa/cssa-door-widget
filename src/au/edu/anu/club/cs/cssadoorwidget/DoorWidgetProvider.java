@@ -40,10 +40,10 @@ public class DoorWidgetProvider extends AppWidgetProvider {
 		//logv(this, "onReceive called with: " + intent.getAction());
 		if (intent.getAction().equals(DOOR_BUTTON)) {
 			logv(this, "button pressed");
-			new NetworkTask().execute(context);
+			new NetworkTask().execute(new NetworkTask.NetworkTaskParams(context, true));
 		} else if (intent.getAction().equals(UPDATE_ACTION)) {
 			logv(this, "alarm update called");
-			new NetworkTask().execute(context);
+			new NetworkTask().execute(new NetworkTask.NetworkTaskParams(context, false));
 		}
 		super.onReceive(context, intent);
 	}
