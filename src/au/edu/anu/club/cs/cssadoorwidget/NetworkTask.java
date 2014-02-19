@@ -63,7 +63,7 @@ public class NetworkTask extends AsyncTask<Context, Void, Void> {
 		ResponseHandler<String> responseHandler = new BasicResponseHandler();
 		try {
 			String door_text = client.execute(request, responseHandler);
-			logv(this, door_text);
+			//logv(this, door_text);
 			return door_text.contains(OPEN_STRING);
 		} catch (ClientProtocolException e) {
 			throw new DoorAccessException(e);

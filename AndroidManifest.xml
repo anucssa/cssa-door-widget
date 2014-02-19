@@ -25,6 +25,17 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/door_widget_info" />
         </receiver>
+        <receiver
+            android:name="au.edu.anu.club.cs.cssadoorwidget.ScreenReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="au.edu.anu.club.cs.cssadoorwidget.ScreenService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

@@ -1,0 +1,5 @@
+* Need to handle multiple instances of the widget
+
+* Update only when screen is on
+
+* Configuration file for Android 3.0+
