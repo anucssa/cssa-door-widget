@@ -35,7 +35,7 @@ public class NetworkTask extends AsyncTask<NetworkTask.NetworkTaskParams, Void, 
 	private Result result = null;
 	private NetworkTaskParams p;
 
-	private static final String DOOR_URI = "http://cs.club.anu.edu.au/files/doorstate.txt";
+	private static final String DOOR_URI = "http://cssadoor.herokuapp.com/";
 	private static final String OPEN_STRING = "open";
 	private static final int TRANSITION_LENGTH_MILLIS = 500;
 
